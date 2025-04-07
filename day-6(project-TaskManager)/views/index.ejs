@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello node</h1>
+    <form action="/addData" method="POST">
+        <input type="text" placeholder="id" name="id">
+        <input type="text" placeholder="Enter Your Task" name="task">
+        <button type="submit">add</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>work</th>
+            <th colspan="2">action</th>
+        </tr>
+        <% tasks.map((e,l) => { %>
+            <tr>
+                <td><%= e.task %></td>
+                <td><a href="/editData/<%= e.id %>"><button>Edit</button></a></td>
+                <td><a href="/deleteData/<%= e.id %>"><button>delete</button></a></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
