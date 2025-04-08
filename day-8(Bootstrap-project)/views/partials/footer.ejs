@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-footer {
+          background-color: #212529;
+          color: #fff;
+          padding: 40px 0;
+        }
+        .custom-footer a {
+          color: #ccc;
+          text-decoration: none;
+        }
+        .custom-footer a:hover {
+          color: #fff;
+        }
+        .custom-footer .footer-section {
+          min-width: 200px;
+          margin-right: 40px;
+        }
+        .custom-footer .social-icons a {
+          margin-right: 10px;
+          font-size: 18px;
+          color: #ccc;
+        }
+        .custom-footer .social-icons a:hover {
+          color: #fff;
+        }
+        @media (max-width: 768px) {
+          .custom-footer .footer-flex {
+            flex-direction: column;
+          }
+        }
+      </style>
+</head>
+<body>
+    <footer class="custom-footer">
+        <div class="container">
+          <div class="d-flex footer-flex flex-wrap justify-content-between">
+            
+            <!-- About -->
+            <div class="footer-section">
+              <h5>About Us</h5>
+              <p>We are a team of developers making awesome web tools using Bootstrap.</p>
+            </div>
+    
+            <!-- Links -->
+            <div class="footer-section">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+    
+            <!-- Contact -->
+            <div class="footer-section">
+              <h5>Contact</h5>
+              <p><i class="fas fa-envelope"></i> email@example.com</p>
+              <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+    
+            <!-- Social -->
+            <div class="footer-section">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+          </div>
+    
+          <hr class="mt-4 border-light" />
+          <div class="text-center mt-2">
+            &copy; 2025 MySite. All rights reserved.
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
