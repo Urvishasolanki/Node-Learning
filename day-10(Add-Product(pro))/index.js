@@ -12,7 +12,7 @@ app.get("/", async(req, res) => {
        res.render("index", {products})
     })
 });
-app.post("/addData",async(req,res)=>{
+app.post("/addData",async(req,res)=>{    
     await schema.create(req.body).then(()=>{
         res.redirect("/")
     })
@@ -28,9 +28,7 @@ app.get('/editData', async (req, res) => {
     res.render("edit", { s_product });  
 });
 app.post('/updateData', async (req, res) => {
-     console.log(req.body)
-     const { id, img, price, name,quantity } = req.body;
-     await schema.findByIdAndUpdate(id, { img, price, name,quantity }).then(()=>{
+     await schema.findByIdAndUpdate(req.body.id,req.body).then(()=>{
         res.redirect("/");
     })
    
