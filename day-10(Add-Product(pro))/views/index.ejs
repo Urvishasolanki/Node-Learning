@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <form action="/addData" method="post">
+        <input type="text"  placeholder="Enter id" name="id"><br><br>
+        <input type="text" placeholder="Enter image" name="img"><br><br>
+        <input type="text"  placeholder="Enter price" name="price"><br><br>
+        <input type="text" placeholder="Enter name" name="name"><br><br>
+        <input type="text" placeholder="Enter price" name="qty"><br><br>
+        <button type="submit">add</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>img</th>
+                <th>price</th>
+                <th>name</th>
+                <th>quantity</th>
+                <th colspan="2">action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+           <% products.map((e,i)=>{ %>
+                <tr>
+                    <td><%=e.id%></td>
+                    <td><%=e.img%></td>
+                    <td><%=e.price%></td>
+                    <td><%=e.name%></td>
+                    <td><%=e.quantity%></td>
+                    <td><a href="/editData?id=<%=e._id %>"><button>Edit</button></a></td>
+                    <td><a href="/deleteData?id=<%=e._id %>"> <button>Delete</button></a></td>
+                </tr>
+           <%})%>
+        </tbody>
+    </table>
+</body>
+</html>

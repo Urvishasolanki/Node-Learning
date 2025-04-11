@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updateData" method="post">
+        <input type="text"  placeholder="Enter id"  hidden name="id"  value="<%= s_product.id %>"><br><br>
+        <input type="text" placeholder="Enter image" name="img" value="<%= s_product.img %>"><br><br>
+        <input type="text"  placeholder="Enter price" name="price" value="<%= s_product.price %>"><br><br>
+        <input type="text" placeholder="Enter name" name="name" value="<%= s_product.name %>"><br><br>
+        <input type="text" placeholder="Enter qty" name="qty" value="<%= s_product.quantity %>"><br><br>
+        <button type="submit">update</button>
+    </form>
+</body>
+</html>
