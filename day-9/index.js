@@ -24,17 +24,16 @@ app.get('/editData', async (req, res) => {
     res.render("edit", { student });  
 });
 app.post('/updateData', async (req, res) => {
-    console.log("Form submitted:", req.body);  // Debug line
     const { id, name, city, subject } = req.body;
-    await schema.findByIdAndUpdate(id, { name, city, subject });
-    res.redirect("/");
+    await schema.findByIdAndUpdate(id, { name, city, subject }).then(()=>{
+        res.redirect("/");
+    })
+   
 });
-
 app.post("/addData",async(req,res)=>{
     await schema.create(req.body).then(()=>{
         res.redirect("/")
     })
-    // console.log(req.body)
 })
 app.listen(port, (err) => {
     err ? console.log(err) : console.log("server started on port :" + port);
