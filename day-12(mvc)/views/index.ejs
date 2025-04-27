@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MVC</h1>
+    <form action="/addData" method="post" enctype="multipart/form-data">
+        <input type="file" name="profile" id="">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="age" placeholder="Age">
+        <select name="city" id="">
+            <option value="rajkot">Rajkot</option>
+            <option value="amreli">Amreli</option>
+            <option value="surat">Surat</option>
+        </select>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <button type="submit">Submit</button>
+    </form>
+
+    <table border="1" width="70%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>profile</th>
+                <th>name</th>
+                <th>age</th>
+                <th>city</th>
+                <th>gender</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map((el, i) => { %>
+                <tr>
+                    <td><%= el.id %></td>
+                    <td><img width="50px" src="<%= el.profile %>" alt="<%= el.profile %>"></td>
+                    <td><%= el.name %></td>
+                    <td><%= el.age %></td>
+                    <td><%= el.city %></td>
+                    <td><%= el.gender %></td>
+                    <td>
+                        <a href="/editData/<%= el.id %>"><button>Edit</button></a>
+                        <a href="/deleteData/<%= el.id %>"><button>Delete</button></a>
+                    </td>
+                </tr>
+            <% })%>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Operation</title>
+</head>
+<body>
+    <form action="/updateData" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<%= singleData.id %>">
+        <img src="/<%= singleData.profile %>" alt="<%= singleData.profile %>">
+        <input type="file" name="profile" >
+        <input type="text" name="name" value="<%= singleData.name %>" placeholder="Name">
+        <input type="text" name="age" value="<%= singleData.age %>" placeholder="Age">
+        <select name="city" id="">
+            <option value="rajkot" <%= singleData.city == "rajkot" ? "selected" : "" %> >Rajkot</option>
+            <option value="amreli" <%= singleData.city == "amreli" ? "selected" : "" %> >Amreli</option>
+            <option value="surat" <%= singleData.city == "surat" ? "selected" : "" %> >Surat</option>
+        </select>
+        <input type="radio" name="gender" value="male"  <%= singleData.gender == "male" ? "checked" : "" %>> Male
+        <input type="radio" name="gender" value="female"  <%= singleData.gender == "female" ? "checked" : "" %>> Female
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
