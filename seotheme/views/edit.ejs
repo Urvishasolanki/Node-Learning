@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h3>Edit Admin Information</h3>
+        <form action="/updateAdmin" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="firstname" hidden class="form-label">id</label>
+            <input type="text" hidden class="form-control" id="id" name="id" value="<%=data.id%>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" value="<%=data.firstname %>" required>
+          </div>
+      
+          <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" value="<%=data.lastname %>" required>
+          </div>
+      
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<%=data.email %>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" value="<%=data.password %>" required>
+          </div>
+      
+          <div class="mb-3">
+            <label for="image" class="form-label">Profile Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+            <img src="<%= data.image %>" alt="Current Image" width="100" height="100" class="mt-2">
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+      </div>
+      
+</body>
+</html>
