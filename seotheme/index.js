@@ -6,6 +6,8 @@ const port = 1008
 const app = express()
 const passport = require('passport')
 const session = require('express-session')
+const connectFlash = require("connect-flash")
+const flash = require("./middlewear/flash")
 
 app.set("view engine","ejs")
 app.use(express.urlencoded({ extended: true }));
@@ -20,8 +22,12 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(connectFlash())
+app.use(flash.setFlash)
+
 
 app.use("/", route);
+app.use("/category", route);
 app.listen(port,(err)=>{
   err ? console.log(err) : console.log("start on 1008")
 })

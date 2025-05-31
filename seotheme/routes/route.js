@@ -14,5 +14,6 @@ router.get("/viewAdmin", passport.checkAuth, ctl.viewAdmin)
 router.get("/deleteData",ctl.deleteData)
 router.get("/editData",ctl.editData)
 router.post("/updateAdmin",multer,ctl.updateAdmin)
+router.get("/profile", passport.checkAuth,ctl.profile)
 
 module.exports = router;
